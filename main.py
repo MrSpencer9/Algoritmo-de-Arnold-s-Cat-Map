@@ -2,18 +2,10 @@ import os
 from PIL.Image import open as load_pic, new as new_pic
 
 def arnolds_cat_map(path, iterations, keep_all=False, name="arnold_cat-{name}-{index}.png"):
-    """
-    Implementación del Arnold's Cat Map.
-    Parámetros:
-        path: str -> Ruta de la imagen a procesar.
-        iterations: int -> Número de iteraciones a realizar.
-        keep_all: bool -> Guardar todas las iteraciones.
-        name: str -> Formato del nombre de archivo.
-    """
     title = os.path.splitext(os.path.split(path)[1])[0]
     counter = 0
 
-    # Verificar si la carpeta results existe, si no, crearla
+    # Verificar si la carpeta results existe, en caso de que no la creamos
     if not os.path.exists("results"):
         os.makedirs("results")
 
